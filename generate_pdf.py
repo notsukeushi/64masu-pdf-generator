@@ -66,12 +66,12 @@ def generate_pdf(filename, num_sets=8):
     for set_idx in range(1, num_sets + 1):
         # Generate numbers for this set
         # Addition: top 1 digit (2-9), left 2 digits (11-19)
-        add_top = [random.randint(2, 9) for _ in range(8)]
-        add_left = [random.randint(11, 19) for _ in range(8)]
+        add_top = random.sample(range(2, 10), 8)
+        add_left = random.sample(range(11, 20), 8)
         
         # Subtraction: top 1 digit (2-9), left 2 digits (11-19)
-        sub_top = [random.randint(2, 9) for _ in range(8)]
-        sub_left = [random.randint(11, 19) for _ in range(8)]
+        sub_top = random.sample(range(2, 10), 8)
+        sub_left = random.sample(range(11, 20), 8)
         
         for is_answer in [False, True]:
             # Draw title
